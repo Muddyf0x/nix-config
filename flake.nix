@@ -35,7 +35,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.anderson = import ./home/muddy;
+            home-manager.users.muddy = import ./home/muddy;
           }
         ];
       };
@@ -50,7 +50,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.anderson = import ./home/muddy;
+            home-manager.users.muddy = import ./home/muddy;
           }
         ];
       };
