@@ -1,6 +1,6 @@
 { ... }:
 {
-  user.users.muddy = {
+  users.users.muddy = {
     isNormalUser = true;
     description = "muddy";
     extraGroups = [ "networkmanager" "wheel" ];
