@@ -1,4 +1,4 @@
 { ... }: 
 {
-  services.fprint.enable = true; # Fingerprint Driver
+  services.fprintd.enable = true; # Fingerprint Driver
 }
