@@ -10,6 +10,7 @@
       stateVersion = "25.11";
     };
     home.packages = with pkgs; [
+      alacritty
       neovim
       ripgrep
       nil
