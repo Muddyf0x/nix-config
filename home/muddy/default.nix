@@ -1,14 +1,25 @@
-{ inputs, config, pkgs, lib, ...}: 
+{ config, pkgs, lib, ...}: 
 {
   imports = [
-#    ./cli
+    ./linkedConfigs
+    ./nixConfigs
   ];
-  config = {
     home = {
       username = "muddy"; 
       homeDirectory = lib.mkForce "/home/muddy";
       stateVersion = "25.11";
     };
+    home.packages = with pkgs; [
+      neovim
+      ripgrep
+      nil
+      nixpkgs-fmt
+      nodejs
+      gcc
+      fastfetch
+      anki
+      age
+      onlyoffice-desktopeditors
+    ];
     programs.home-manager.enable = true;
-  };
 }
