@@ -1,11 +1,12 @@
-{ config, pkgs, ... }: {
+{ ... }: {
   imports = [
     ./common
+    ./users/muddy.nix
+    ./hardware/laptop.nix
     ./opt/de/plasma6
     ./opt/gaming
     ./opt/bluetooth
-    ./hardware/laptop.nix
-    ./users/muddy.nix
+    ./opt/fingerprint    
   ];
   # Unique to Host
   networking.hostName = "lappytop";
