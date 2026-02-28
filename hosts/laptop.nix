@@ -9,6 +9,7 @@
   ];
   # Unique to Host
   networking.hostName = "lappytop";
+  system.stateVersion = "25.11";
 
   # TODO unifi bootloader config -> 
   # combine with switching to btrfs with impermanance 
