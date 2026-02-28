@@ -5,6 +5,7 @@
     ./opt/gaming
     ./opt/bluetooth
     ./hardware/laptop.nix
+    ./users/muddy.nix
   ];
   # Unique to Host
   networking.hostName = "lappytop";
