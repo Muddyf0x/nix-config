@@ -2,6 +2,7 @@
 {
   imports = [
 #    ./cli
+    ./user.nix
   ];
   config = {
     home = {
