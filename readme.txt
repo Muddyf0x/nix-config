@@ -1,15 +1,6 @@
-Current Progress: 
-    - hosts:
-        - Laptop: Done
-        - Common: Done
-        - opt: Done
 TODO:
     - Home: 
-        - default.nix
-        - User (muddy)
-            - default.nix
-            - programs
-            - services
+       - User (muddy)
             - themes
     - Secrets
         - getting started with agentix or other secrets manager 
