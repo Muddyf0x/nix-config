@@ -1,7 +1,7 @@
 { inputs, config, pkgs, ...}: 
 {
   imports = [
-    ./cli
+#    ./cli
   ];
   config = {
     home = {
