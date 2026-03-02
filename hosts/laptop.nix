@@ -6,7 +6,8 @@
     ./opt/de/plasma6
     ./opt/gaming
     ./opt/bluetooth
-    ./opt/fingerprint    
+#    currently broken with sddm
+#    ./opt/fingerprint    
   ];
   # Unique to Host
   networking.hostName = "lappytop";
