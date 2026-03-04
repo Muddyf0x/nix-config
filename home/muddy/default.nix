@@ -21,6 +21,7 @@
       anki
       age
       onlyoffice-desktopeditors
+      mpv
     ];
     programs.home-manager.enable = true;
 }
