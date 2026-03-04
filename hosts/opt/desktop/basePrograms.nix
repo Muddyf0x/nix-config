@@ -1,8 +1,9 @@
 {
   programs = {
   # TODO add firefox config
-  firefox = {
+    firefox = {
       enable = true;
     };
+    kdePackages.partitionmanager.enable = true;
   };
 }

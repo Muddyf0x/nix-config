@@ -21,7 +21,6 @@
       anki
       age
       onlyoffice-desktopeditors
-      kdePackages.partitionmanager
     ];
     programs.home-manager.enable = true;
 }
