@@ -6,6 +6,7 @@
     ./opt/de/plasma6
     ./opt/gaming
     ./opt/bluetooth
+    ./opt/torrent
 #    currently broken with sddm
 #    ./opt/fingerprint    
   ];
