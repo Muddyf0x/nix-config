@@ -4,6 +4,6 @@
     firefox = {
       enable = true;
     };
-    kdePackages.partitionmanager.enable = true;
+    partition-manager.enable = true;
   };
 }
