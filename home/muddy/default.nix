@@ -1,27 +1,36 @@
 { config, pkgs, lib, ...}: 
 {
+  # Import configurations
   imports = [
-    ./linkedConfigs
-    ./nixConfigs
+    ./linkedConfigs # Program specific configurations
+    ./nixConfigs    # Programs configured in/with Nix
   ];
+    # User/Home Configuration
     home = {
       username = "muddy"; 
       homeDirectory = lib.mkForce "/home/muddy";
       stateVersion = "25.11";
     };
+    
+    # Install Pkgs sorted by way of configuration
     home.packages = with pkgs; [
+      # Linked Configs
       alacritty
       neovim
-      ripgrep
-      nil
-      nixpkgs-fmt
-      nodejs
-      gcc
-      fastfetch
-      anki
+      # Nix Configs
+
+      # Unconfigured Programs
       age
-      onlyoffice-desktopeditors
+      anki
+      fastfetch
       mpv
+      nil
+      nodejs
+      nixpkgs-fmt
+      onlyoffice-desktopeditors
+      ripgrep
+      gcc
     ];
+    # Let Home-manager manage itself
     programs.home-manager.enable = true;
 }
