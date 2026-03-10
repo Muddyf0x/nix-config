@@ -7,6 +7,7 @@
     ./opt/gaming
     ./opt/bluetooth
     ./opt/torrent
+    ./opt/libvirt
 #    currently broken with sddm
 #    ./opt/fingerprint    
   ];
