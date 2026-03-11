@@ -3,6 +3,6 @@
   environment.systemPackages = with pkgs; [
     age
     sops
-    ssh-age
+    ssh-to-age
   ];  
 }
