@@ -5,14 +5,14 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.11";
-
+    # Manage home files and configs
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    agenix = {
-      url = "github:ryantm/agenix";
+    # Manage secrets in a secure way 
+    sops-nix = {
+      url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 # Todo Add: 
