@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     age
-    sops-nix
+    sops
     ssh-age
   ];  
 }
