@@ -1,11 +1,14 @@
 { ... }: {
   imports = [
-    ./common
-    ./users/muddy.nix
-    ./hardware/laptop.nix
+    ./common              # Packages used by all hosts
+    # Users of the system
+    ./users/muddy.nix 
+    # hardware config
+    ./hardware/laptop.nix 
+    ./opt/bluetooth
+    # host specific programs (i.e Desktop, gaming support, ... )
     ./opt/de/plasma6
     ./opt/gaming
-    ./opt/bluetooth
     ./opt/torrent
     ./opt/libvirt
 #    currently broken with sddm
