@@ -2,6 +2,7 @@
 {
   description = "Muddy's Nixos-config flake";
 # Based on quanchobi.io 's config
+# and EmergentMind's
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.11";
