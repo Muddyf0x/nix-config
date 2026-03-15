@@ -27,6 +27,7 @@
       nil
       nodejs
       nixpkgs-fmt
+      obsidian
       onlyoffice-desktopeditors
       ripgrep
       gcc
