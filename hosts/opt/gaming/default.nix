@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs = {
     steam = {
@@ -5,5 +6,14 @@
     };
   };
   nixpkgs.config.allowUnfree = true;
-  programs.nix-ld.enable = true;
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      libxrandr
+      libx11
+      gtk3
+      glib
+    ];
+  };
+
 }

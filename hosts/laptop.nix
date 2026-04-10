@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ./common              # Packages used by all hosts
     # Users of the system
@@ -24,4 +24,7 @@
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
+  environment.systemPackages = [
+    pkgs.ntfs3g
+  ];
 }
