@@ -2,17 +2,18 @@
 {
   description = "Muddy's Nixos-config flake";
 # Based on quanchobi.io 's config
+# and EmergentMind's
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.11";
-
+    # Manage home files and configs
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    agenix = {
-      url = "github:ryantm/agenix";
+    # Manage secrets in a secure way 
+    sops-nix = {
+      url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 # Todo Add: 
@@ -23,7 +24,7 @@
 # Disko: Declerativ partitioning and formationg 
   };
 
-  outputs = { nixpkgs, home-manager, agenix, ... }: {
+  outputs = { nixpkgs, home-manager, sops-nix, ... }: {
     nixosConfigurations = {
       # Desktop configuration
       desktop = nixpkgs.lib.nixosSystem {
@@ -31,7 +32,7 @@
         modules = [
           ./hosts/desktop.nix
           home-manager.nixosModules.home-manager
-          agenix.nixosModules.default
+          sops-nix.nixosModules.sops
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -46,7 +47,7 @@
         modules = [
           ./hosts/laptop.nix
           home-manager.nixosModules.home-manager
-          agenix.nixosModules.default
+          sops-nix.nixosModules.sops
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
