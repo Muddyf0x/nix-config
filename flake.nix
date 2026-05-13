@@ -24,7 +24,7 @@
 # Disko: Declerativ partitioning and formationg 
   };
 
-  outputs = { nixpkgs, home-manager, agenix, ... }: {
+  outputs = { nixpkgs, home-manager, sops-nix, ... }: {
     nixosConfigurations = {
       # Desktop configuration
       desktop = nixpkgs.lib.nixosSystem {
@@ -32,7 +32,7 @@
         modules = [
           ./hosts/desktop.nix
           home-manager.nixosModules.home-manager
-          agenix.nixosModules.default
+          sops-nix.nixosModules.sops
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -47,7 +47,7 @@
         modules = [
           ./hosts/laptop.nix
           home-manager.nixosModules.home-manager
-          agenix.nixosModules.default
+          sops-nix.nixosModules.sops
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
