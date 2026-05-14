@@ -11,20 +11,25 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Manage secrets in a secure way 
+    # Manage secrets in a secure way
     sops-nix = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-# Todo Add: 
-# impermanence: clean up non permanent files on reboot
+    # Declarative disk partitioning and formatting
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # Ephemeral root — persist only what's declared
+    impermanence.url = "github:nix-community/impermanence";
+# Todo Add:
 # nixvirt: Declerativ vm managment with libvirt
-# stylix: styl everything in one place 
+# stylix: styl everything in one place
 # silentSDDM: good looking login manager
-# Disko: Declerativ partitioning and formationg 
   };
 
-  outputs = { nixpkgs, home-manager, sops-nix, ... }: {
+  outputs = { nixpkgs, home-manager, sops-nix, disko, impermanence, ... }: {
     nixosConfigurations = {
       # Desktop configuration
       desktop = nixpkgs.lib.nixosSystem {
@@ -33,6 +38,8 @@
           ./hosts/desktop.nix
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
+          disko.nixosModules.disko
+          impermanence.nixosModules.impermanence
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -48,10 +55,30 @@
           ./hosts/laptop.nix
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
+          disko.nixosModules.disko
+          impermanence.nixosModules.impermanence
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.muddy = import ./home/muddy;
+          }
+        ];
+      };
+
+      # VM test target — identical to laptop but targets /dev/vda (virtio disk)
+      laptop-vm = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/laptop.nix
+          home-manager.nixosModules.home-manager
+          sops-nix.nixosModules.sops
+          disko.nixosModules.disko
+          impermanence.nixosModules.impermanence
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.muddy = import ./home/muddy;
+            disko.devices.disk.nvme0n1.device = "/dev/vda";
           }
         ];
       };

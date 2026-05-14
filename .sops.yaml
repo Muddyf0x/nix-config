@@ -4,6 +4,8 @@ keys:
     - &muddy age10ar32v7r7pdx27kyt0qmqhm2ccs4emy8knzztnyjm0xhy82gkqcqwv2299
   - &hosts:
     - &laptop age1gwndcsc65m0r2cycr0zzzdpz5ns5g96gkw7z2z6nn932fdjn59kqa2vjz4
+    # replace with output of: cat /mnt/persist/etc/ssh/id_ed25519.pub | ssh-to-age
+    - &laptop-vm age1REPLACEME
 
 creation_rules:
 - path_regex: secrets.yaml$
@@ -11,3 +13,4 @@ creation_rules:
     - age:
       - *muddy
       - *laptop
+      - *laptop-vm
