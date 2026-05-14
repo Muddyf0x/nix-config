@@ -78,7 +78,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.muddy = import ./home/muddy;
-            disko.devices.disk.nvme0n1.device = "/dev/vda";
+            disko.devices.disk.nvme0n1.device = nixpkgs.lib.mkForce "/dev/vda";
           }
         ];
       };
