@@ -7,7 +7,7 @@ keys:
     # replace with output of: cat /mnt/persist/etc/ssh/id_ed25519.pub | ssh-to-age
 
 
-    - &laptop-vm age1ws5s4usth5umrvjudxvfu77zuapusfmkeea9pp9zswc996fsf9yqz9h04a
+    - &laptop-vm age1v3slyg9sas6jxrucwntcu3mhplj94ay2gcntclz4ld43gkwpg9cq9g0d2t
 
 creation_rules:
 - path_regex: secrets.yaml$
