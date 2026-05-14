@@ -79,6 +79,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.muddy = import ./home/muddy;
             disko.devices.disk.nvme0n1.device = nixpkgs.lib.mkForce "/dev/vda";
+            boot.initrd.availableKernelModules = [ "virtio_pci" "virtio_blk" ];
           }
         ];
       };
