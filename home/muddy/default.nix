@@ -22,6 +22,7 @@
       # Unconfigured Programs
       age
       anki
+      claude-code
       fastfetch
       mpv
       nil

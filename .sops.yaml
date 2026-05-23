@@ -3,8 +3,7 @@ keys:
   - &users:
     - &muddy age10ar32v7r7pdx27kyt0qmqhm2ccs4emy8knzztnyjm0xhy82gkqcqwv2299
   - &hosts:
-    - &laptop age1gwndcsc65m0r2cycr0zzzdpz5ns5g96gkw7z2z6nn932fdjn59kqa2vjz4
-
+    - &laptop age1kxn90x0xz8lkdmzs0wlncjdjsm32tzkvqcfp092v4c58z63gtp9qvwflsa
     - &laptop-vm age1v3slyg9sas6jxrucwntcu3mhplj94ay2gcntclz4ld43gkwpg9cq9g0d2t
     
     - &desktop age1z3802f2k2cagv7734g50f2n582gwzr7hs37ccg2n2y54n0sheufqkgmwrt
