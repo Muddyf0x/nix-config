@@ -7,9 +7,13 @@
   ];
     # User/Home Configuration
     home = {
-      username = "muddy"; 
+      username = "muddy";
       homeDirectory = lib.mkForce "/home/muddy";
       stateVersion = "25.11";
+      sessionVariables = {
+        EDITOR = "nvim";
+        VISUAL = "nvim";
+      };
     };
     
     # Install Pkgs sorted by way of configuration
@@ -28,6 +32,7 @@
       nil
       nodejs
       nixpkgs-fmt
+      thunderbird
       obsidian
       onlyoffice-desktopeditors
       ripgrep

@@ -1,3 +1,6 @@
+[terminal.shell]
+program = "/run/current-system/sw/bin/zsh"
+
 [window]
 opacity=0.9
 [window.padding]
