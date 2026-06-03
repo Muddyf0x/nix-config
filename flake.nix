@@ -5,10 +5,10 @@
 # and EmergentMind's
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.11";
+    nixpkgs.url = "nixpkgs/nixos-26.05";
     # Manage home files and configs
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Manage secrets in a secure way
@@ -23,13 +23,18 @@
     };
     # Ephemeral root — persist only what's declared
     impermanence.url = "github:nix-community/impermanence";
+# Secure Boot for NixOS using UKI (Unified Kernel Images)
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 # Todo Add:
 # nixvirt: Declerativ vm managment with libvirt
 # stylix: styl everything in one place
 # silentSDDM: good looking login manager
   };
 
-  outputs = { nixpkgs, home-manager, sops-nix, disko, impermanence, ... }: {
+  outputs = { nixpkgs, home-manager, sops-nix, disko, impermanence, lanzaboote, ... }: {
     nixosConfigurations = {
       # Desktop configuration
       desktop = nixpkgs.lib.nixosSystem {
@@ -57,6 +62,7 @@
           sops-nix.nixosModules.sops
           disko.nixosModules.disko
           impermanence.nixosModules.impermanence
+          lanzaboote.nixosModules.lanzaboote
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -74,10 +80,11 @@
           sops-nix.nixosModules.sops
           disko.nixosModules.disko
           impermanence.nixosModules.impermanence
+          lanzaboote.nixosModules.lanzaboote
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.muddy = import ./home/muddy;
+            home-manager.users.muddy = import ./home/jonas;
             disko.devices.disk.nvme0n1.device = nixpkgs.lib.mkForce "/dev/vda";
             boot.initrd.availableKernelModules = [ "virtio_pci" "virtio_blk" ];
           }

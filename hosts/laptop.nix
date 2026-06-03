@@ -13,17 +13,13 @@
     ./opt/gaming
     ./opt/torrent
     ./opt/libvirt
+    ./opt/lanzaboote
 #    currently broken with sddm
-#    ./opt/fingerprint    
+#    ./opt/fingerprint
   ];
   # Unique to Host
   networking.hostName = "lappytop";
   system.stateVersion = "25.11";
-
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
   environment.systemPackages = [
     pkgs.ntfs3g
   ];
