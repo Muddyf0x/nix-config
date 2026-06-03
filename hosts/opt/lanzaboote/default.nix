@@ -20,6 +20,4 @@
   # sbctl for managing secure boot keys
   environment.systemPackages = [ pkgs.sbctl ];
 
-  # Persist secure boot keys across ephemeral root rollbacks
-  # /var/lib is already on a persistent subvolume, so no extra config needed
 }
