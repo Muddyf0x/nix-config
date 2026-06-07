@@ -34,6 +34,7 @@
       nixpkgs-fmt
       thunderbird
       obsidian
+      obs-studio
       onlyoffice-desktopeditors
       ripgrep
       gcc
