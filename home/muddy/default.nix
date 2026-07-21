@@ -28,6 +28,7 @@
       anki
       claude-code
       fastfetch
+      libreoffice
       mpv
       nil
       nodejs
@@ -35,6 +36,7 @@
       thunderbird
       obsidian
       obs-studio
+      kdePackages.kdenlive
       onlyoffice-desktopeditors
       ripgrep
       gcc
