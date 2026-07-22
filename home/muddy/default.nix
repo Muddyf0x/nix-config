@@ -27,6 +27,7 @@
       age
       android-tools
       anki
+      brave
       claude-code
       fastfetch
       libreoffice
