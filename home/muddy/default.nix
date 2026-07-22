@@ -25,6 +25,7 @@
 
       # Unconfigured Programs
       age
+      android-tools
       anki
       claude-code
       fastfetch
