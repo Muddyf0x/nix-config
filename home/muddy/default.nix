@@ -28,6 +28,7 @@
       android-tools
       anki
       brave
+      cisco-packet-tracer
       claude-code
       fastfetch
       libreoffice
