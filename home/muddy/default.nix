@@ -28,7 +28,7 @@
       android-tools
       anki
       brave
-      cisco-packet-tracer
+      cisco-packet-tracer_9
       claude-code
       fastfetch
       libreoffice
@@ -43,6 +43,11 @@
       onlyoffice-desktopeditors
       ripgrep
       gcc
+
+      # LaTeX
+      vscodium
+      texlive.combined.scheme-full
+      zathura
     ];
     # Let Home-manager manage itself
     programs.home-manager.enable = true;
