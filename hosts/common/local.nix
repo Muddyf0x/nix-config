@@ -1,6 +1,6 @@
 {pkgs, lib, config, ...}:
 {
-  time.timeZone = "Europe/Vienna";
+  time.timeZone = "Europe/Sofia";
 
   console.keyMap = "de";
 
