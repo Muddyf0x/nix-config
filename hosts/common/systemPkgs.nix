@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  services.udev.packages = [ pkgs.arduino-ide ];
+
   environment.systemPackages = with pkgs; [
     vim
     wget

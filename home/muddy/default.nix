@@ -44,6 +44,9 @@
       ripgrep
       gcc
 
+      # Arduino
+      arduino-ide
+
       # LaTeX
       vscodium
       texlive.combined.scheme-full
