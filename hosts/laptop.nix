@@ -14,6 +14,7 @@
     ./opt/torrent
     ./opt/libvirt
     ./opt/lanzaboote
+    ./opt/vpn/wireguard.nix
 #    currently broken with sddm
 #    ./opt/fingerprint
   ];
