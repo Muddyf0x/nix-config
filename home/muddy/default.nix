@@ -30,6 +30,7 @@
       brave
       cisco-packet-tracer_9
       claude-code
+      easyeffects
       fastfetch
       libreoffice
       mpv

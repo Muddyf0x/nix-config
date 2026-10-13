@@ -1,3 +1,4 @@
+{ claude-code-nix, ... }:
 {
   imports = [
     ./local.nix
@@ -13,5 +14,8 @@
     (final: prev: {
       cisco-packet-tracer_9 = final.callPackage ./cisco-packet-tracer.nix { };
     })
+    # Replaces nixpkgs' claude-code with the community package, which follows
+    # upstream releases closely instead of the channel's slower cadence
+    claude-code-nix.overlays.default
   ];
 }

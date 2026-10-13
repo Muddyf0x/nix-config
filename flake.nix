@@ -23,6 +23,11 @@
     };
     # Ephemeral root — persist only what's declared
     impermanence.url = "github:nix-community/impermanence";
+    # Claude Code, tracking upstream releases faster than nixpkgs
+    claude-code-nix = {
+      url = "github:sadjow/claude-code-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 # Secure Boot for NixOS using UKI (Unified Kernel Images)
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
@@ -34,11 +39,12 @@
 # silentSDDM: good looking login manager
   };
 
-  outputs = { nixpkgs, home-manager, sops-nix, disko, impermanence, lanzaboote, ... }: {
+  outputs = { nixpkgs, home-manager, sops-nix, disko, impermanence, lanzaboote, claude-code-nix, ... }: {
     nixosConfigurations = {
       # Desktop configuration
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit claude-code-nix; };
         modules = [
           ./hosts/desktop.nix
           home-manager.nixosModules.home-manager
@@ -56,6 +62,7 @@
       # Laptop configuration
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit claude-code-nix; };
         modules = [
           ./hosts/laptop.nix
           home-manager.nixosModules.home-manager
@@ -74,6 +81,7 @@
       # VM test target — identical to laptop but targets /dev/vda (virtio disk)
       laptop-vm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit claude-code-nix; };
         modules = [
           ./hosts/laptop.nix
           home-manager.nixosModules.home-manager
