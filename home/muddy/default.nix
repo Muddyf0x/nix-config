@@ -47,6 +47,7 @@
 
       # Arduino
       arduino-ide
+      python3 # ESP32 core runs gen_esp32part.py / flasher.py with python3
 
       # LaTeX
       vscodium

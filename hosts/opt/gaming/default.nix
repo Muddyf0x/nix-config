@@ -5,6 +5,8 @@
       enable = true;
     };
   };
+  # Minecraft (official launcher isn't packaged in nixpkgs)
+  environment.systemPackages = [ pkgs.prismlauncher ];
   nixpkgs.config.allowUnfree = true;
   programs.nix-ld = {
     enable = true;
