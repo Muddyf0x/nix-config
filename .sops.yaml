@@ -2,6 +2,7 @@
 keys:
   - &users:
     - &muddy age10ar32v7r7pdx27kyt0qmqhm2ccs4emy8knzztnyjm0xhy82gkqcqwv2299
+    - &muddy-yubikey age1yubikey1qt9ywkt63lugzj9llx22j4ncxvatyet6rvzjgxhwe94z6tewk947w4r00e2
   - &hosts:
     - &laptop age1fw28hhf8c8z9vq27kra9l2gthy56w7gt8wr0kcdpc0mscg0xegps324hul
     - &laptop-vm age1v3slyg9sas6jxrucwntcu3mhplj94ay2gcntclz4ld43gkwpg9cq9g0d2t
@@ -13,6 +14,7 @@ creation_rules:
   key_groups:
     - age:
       - *muddy
+      - *muddy-yubikey
       - *laptop
       - *laptop-vm
       - *desktop

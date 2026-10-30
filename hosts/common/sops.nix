@@ -4,7 +4,12 @@
     age
     sops
     ssh-to-age
+    age-plugin-yubikey
+    yubikey-manager
   ];
+
+  # YubiKey PIV access for age-plugin-yubikey
+  services.pcscd.enable = true;
 
   # Write the host key directly into /persist so the openssh activation script
   # never touches the ephemeral root. sops-nix reads from the same path,
