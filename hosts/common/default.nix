@@ -13,6 +13,8 @@
   nixpkgs.overlays = [
     (final: prev: {
       cisco-packet-tracer_9 = final.callPackage ./cisco-packet-tracer.nix { };
+      # Not in nixpkgs; wraps the upstream AppImage
+      learnharness = final.callPackage ./learnharness.nix { };
     })
     # Replaces nixpkgs' claude-code with the community package, which follows
     # upstream releases closely instead of the channel's slower cadence

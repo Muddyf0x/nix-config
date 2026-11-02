@@ -41,6 +41,7 @@
       obsidian
       obs-studio
       kdePackages.kdenlive
+      learnharness
       onlyoffice-desktopeditors
       ripgrep
       gcc
