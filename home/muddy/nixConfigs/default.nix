@@ -1,7 +1,13 @@
+{ pkgs, ... }:
 {
   programs = {
     git = {
       enable = true;
+    };
+
+    obs-studio = {
+      enable = true;
+      plugins = [ pkgs.obs-studio-plugins.obs-pipewire-audio-capture ]; # per-app audio capture
     };
 
     zsh = {

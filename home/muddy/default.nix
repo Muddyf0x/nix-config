@@ -39,7 +39,6 @@
       nixpkgs-fmt
       thunderbird
       obsidian
-      obs-studio
       kdePackages.kdenlive
       learnharness
       onlyoffice-desktopeditors

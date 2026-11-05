@@ -186,6 +186,8 @@ vim.lsp.config['rust_analyzer'] = {
 }
 
 -- C / C++ via clangd
+-- No --query-driver: nixpkgs' clangd wrapper adds the dev shell's include paths
+-- (glibc, buildInputs) itself, but skips that when --query-driver is passed.
 vim.lsp.config['clangd'] = {
     cmd = {
         'clangd',
@@ -193,7 +195,6 @@ vim.lsp.config['clangd'] = {
         '--clang-tidy',
         '--header-insertion=never',
         '--completion-style=detailed',
-        '--query-driver=/nix/store/*-gcc-*/bin/gcc*,/nix/store/*-clang-*/bin/clang*,/run/current-system/sw/bin/cc*',
     },
     filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
     root_markers = { 'compile_commands.json', '.clangd', 'configure.ac', 'Makefile', '.git' },
